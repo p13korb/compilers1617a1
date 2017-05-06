@@ -2,7 +2,7 @@
 import sys
 import re
 import argparse
-
+import datetime
 
 parser = argparse.ArgumentParser()
 # add mandatory (positional) arguments
@@ -14,9 +14,9 @@ args = parser.parse_args()
 
 with open(args.fname,newline='') as ifp:	
 	for line in ifp:
-	
-		# -- αντικαταστήστε με τον δικό σας κώδικα (αρχή) --
-
+		regularexpression=re.compile(r'(?P<hours>\d{2}):(?P<minutes>\d{2}):(?P<seconds>\d+,\d+))
+		
+		
 		sys.stdout.write(line)
 
 		# -- αντικαταστήστε με τον δικό σας κώδικα (τέλος) --
